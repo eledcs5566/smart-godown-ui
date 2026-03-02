@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Godown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>ESP32 Smart Godown</h2>
+
+    <div>
+        <button onclick="toggleRelay('R1','ON')">Light 1 ON</button>
+        <button onclick="toggleRelay('R1','OFF')">Light 1 OFF</button>
+    </div>
+    <div>
+        <button onclick="toggleRelay('R2','ON')">Light 2 ON</button>
+        <button onclick="toggleRelay('R2','OFF')">Light 2 OFF</button>
+    </div>
+    <div>
+        <button onclick="toggleRelay('R3','ON')">Light 3 ON</button>
+        <button onclick="toggleRelay('R3','OFF')">Light 3 OFF</button>
+    </div>
+    <div>
+        <button onclick="toggleRelay('R4','ON')">Light 4 ON</button>
+        <button onclick="toggleRelay('R4','OFF')">Light 4 OFF</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
