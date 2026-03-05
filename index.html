@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Smart Godown</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>SMART GODOWN</h1>
+
+<div class="container">
+
+<h2>Relay Control</h2>
+
+<button class="on" onclick="send('/api/R1ON')">R1 ON</button>
+<button class="off" onclick="send('/api/R1OFF')">R1 OFF</button>
+
+<button class="on" onclick="send('/api/R2ON')">R2 ON</button>
+<button class="off" onclick="send('/api/R2OFF')">R2 OFF</button>
+
+<button class="on" onclick="send('/api/R3ON')">R3 ON</button>
+<button class="off" onclick="send('/api/R3OFF')">R3 OFF</button>
+
+<button class="on" onclick="send('/api/R4ON')">R4 ON</button>
+<button class="off" onclick="send('/api/R4OFF')">R4 OFF</button>
+
+<h2>System</h2>
+
+<button class="control" onclick="send('/api/allon')">ALL ON</button>
+<button class="control" onclick="send('/api/alloff')">ALL OFF</button>
+
+<h2>Motion</h2>
+
+<button class="motion" onclick="send('/api/motionon')">Motion ON</button>
+<button class="motion" onclick="send('/api/motionoff')">Motion OFF</button>
+
+<h2>Live Status</h2>
+
+<div class="relayStatus">
+
+<div id="s1">R1 ○</div>
+<div id="s2">R2 ○</div>
+<div id="s3">R3 ○</div>
+<div id="s4">R4 ○</div>
+
+</div>
+
+</div>
+
+<div id="status" class="status">
+
+Detecting ESP...
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
