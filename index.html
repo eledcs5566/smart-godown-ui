@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Godown Control</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Smart Godown Dashboard</h1>
+      <p id="connection-status" class="status offline">Connecting to device...</p>
+    </header>
+
+    <div class="grid">
+      <!-- OLED Live Feed -->
+      <div class="card live-oled">
+        <h3>Live Device Display</h3>
+        <img id="oled-feed" src="" alt="OLED Screen" 
+             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjY0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wIDBoMTI4djY0SDB6IiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNjQiIHk9IjMyIiBmb250LXNpemU9IjE0IiBmaWxsPSIjODg4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+T2ZmbGluZTwvdGV4dD48L3N2Zz4="/>
+        <p class="note">Updates every 3 seconds</p>
+      </div>
+
+      <!-- System Status & Toggles -->
+      <div class="card">
+        <h3>System Controls</h3>
+        <p>Motion Detection: <span id="motion" class="value">...</span></p>
+        <p>Clap Detection:   <span id="clap" class="value">...</span></p>
+        <p>Energy Saved:     <span id="energy" class="value">0.000 kWh</span></p>
+
+        <div class="controls">
+          <button onclick="toggleMotion()">Toggle Motion</button>
+          <button onclick="toggleClap()">Toggle Clap</button>
+        </div>
+      </div>
+
+      <!-- Lighting Sections -->
+      <div class="card sections-card">
+        <h3>Lighting Sections</h3>
+        <div class="sections">
+          <div id="s1" class="dot"></div>
+          <div id="s2" class="dot"></div>
+          <div id="s3" class="dot"></div>
+          <div id="s4" class="dot"></div>
+        </div>
+
+        <div class="relay-controls">
+          <button onclick="relay(1)">Section 1</button>
+          <button onclick="relay(2)">Section 2</button>
+          <button onclick="relay(3)">Section 3</button>
+          <button onclick="relay(4)">Section 4</button>
+          <button onclick="allOn()">ALL ON</button>
+          <button class="danger" onclick="allOff()">ALL OFF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
