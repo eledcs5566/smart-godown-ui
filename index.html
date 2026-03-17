@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect to Smart Godown</title>
+
+<style>
+body{
+background:#0a0a0a;
+color:#e0e0e0;
+font-family:'Inter',sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#121212;
+padding:30px;
+border-radius:16px;
+text-align:center;
+border:1px solid #222;
+}
+
+input{
+padding:12px;
+font-size:16px;
+border-radius:8px;
+border:none;
+margin-top:10px;
+width:220px;
+}
+
+button{
+margin-top:15px;
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:#00c853;
+color:#000;
+font-weight:600;
+cursor:pointer;
+}
+
+button:hover{
+background:#00b140;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Connect to ESP32</h2>
+
+<p>Enter IP from OLED</p>
+
+<input id="ip" placeholder="10.254.6.114">
+
+<br>
+
+<button onclick="connect()">Connect</button>
+</div>
+
+<script>
+
+function connect(){
+
+let ip=document.getElementById("ip").value.trim();
+
+if(ip){
+window.location.href="dashboard.html?ip="+ip;
+}
+
+}
+
+// OPTIONAL: remember last IP
+window.onload = () => {
+let last = localStorage.getItem("esp_ip");
+if(last) document.getElementById("ip").value = last;
+};
+
+function connect(){
+
+let ip=document.getElementById("ip").value.trim();
+
+if(ip){
+localStorage.setItem("esp_ip", ip);
+window.location.href="dashboard.html?ip="+ip;
+}
+
+}
+
+</script>
+
+</body>
+</html>
