@@ -1,0 +1,110 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#0a0a0a;
+color:#e0e0e0;
+font-family:sans-serif;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+header{
+text-align:center;
+margin-bottom:30px;
+}
+
+.status{
+padding:6px 14px;
+border-radius:20px;
+}
+
+.status.online{
+background:#00c85333;
+color:#00ff88;
+animation:blink 2s infinite;
+}
+
+.status.offline{
+background:#ff525233;
+color:#ff5252;
+}
+
+.card{
+background:#121212;
+padding:20px;
+border-radius:16px;
+margin-bottom:20px;
+animation:fadeIn 0.6s ease;
+}
+
+.sections{
+display:flex;
+justify-content:center;
+gap:20px;
+margin:20px 0;
+}
+
+.dot{
+width:30px;
+height:30px;
+border-radius:50%;
+background:#333;
+transition:0.3s;
+}
+
+.dot.active{
+background:#00ff88;
+box-shadow:0 0 15px #00ff88,0 0 30px #00ff8855;
+animation:pulse 1.5s infinite;
+}
+
+button{
+background:#00c853;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 10px #00ff88;
+}
+
+button:active{
+transform:scale(0.9);
+}
+
+.danger{
+background:#ff5252;
+color:#fff;
+}
+
+#active-label{
+color:#00ff88;
+text-shadow:0 0 10px #00ff88;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:0.6;}
+}

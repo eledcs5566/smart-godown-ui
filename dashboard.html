@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Godown Control</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<h1>SMART GODOWN AUTOMATION</h1>
+<p id="connection-status" class="status offline">Connecting...</p>
+</header>
+
+<div class="card">
+
+<h3>Active Zone: <span id="active-label">NONE</span></h3>
+
+<div class="sections">
+<div id="s1" class="dot"></div>
+<div id="s2" class="dot"></div>
+<div id="s3" class="dot"></div>
+<div id="s4" class="dot"></div>
+</div>
+
+<div class="relay-controls">
+<button onclick="relay(1)">Section 1</button>
+<button onclick="relay(2)">Section 2</button>
+<button onclick="relay(3)">Section 3</button>
+<button onclick="relay(4)">Section 4</button>
+<button class="danger" onclick="allOff()">ALL OFF</button>
+</div>
+
+</div>
+
+<div class="card">
+<h3>System Info</h3>
+<p>Controller: ESP32</p>
+<p>Mode: Zone-Based</p>
+<p>Operation: Single Section Active</p>
+</div>
+
+<div class="card">
+<h3>System Logs</h3>
+<div id="logs"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
